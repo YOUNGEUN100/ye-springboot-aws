@@ -1,0 +1,30 @@
+spring:
+  datasource:
+#    url: jdbc:mariadb://localhost:3306/yedb  # mariadb
+    url: jdbc:mariadb://ec2-3-38-209-71.ap-northeast-2.compute.amazonaws.com/yedb  # mariadb
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 1234
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+  jpa:
+    show-sql: true # java코드로 짠 sql을
+    defer-datasource-initialization: true # data.sql 사용을 위해서 필수적으로 등록
+    properties:
+      hibernate:
+        format_sql: true  # sql문 pretty하게 보여줌
+        use_sql_comments: true
+    generate-ddl: true   # true, false
+    hibernate:
+      ddl-auto: create
+  devtools:
+    livereload:
+      enabled: true
+  sql:
+    init:
+      mode: always
+      encoding: utf-8
+
+
