@@ -38,13 +38,15 @@ public class WebSecurityConfig {
         MvcRequestMatcher.Builder mvc = new MvcRequestMatcher.Builder(introspector);
         return http
                 .authorizeHttpRequests()
-                    .requestMatchers(mvc.pattern("/api/**"),mvc.pattern("/login"), mvc.pattern("/signup"), mvc.pattern("/js/**")).permitAll()
+                    .requestMatchers(mvc.pattern("/login"), mvc.pattern("/signup"), mvc.pattern("/js/**")).permitAll()
                     .anyRequest().authenticated()
                 .and()
-                .httpBasic().disable()
-                    .csrf().disable()
-                    .formLogin().disable()
-                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .formLogin()
+                .loginPage("/login")
+//                .httpBasic().disable()
+//                    .csrf().disable()
+//                    .formLogin().disable()
+//                    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .csrf().disable()
                 .build();

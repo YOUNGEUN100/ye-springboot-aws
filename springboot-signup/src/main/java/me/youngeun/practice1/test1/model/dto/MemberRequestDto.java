@@ -1,14 +1,12 @@
 package me.youngeun.practice1.test1.model.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import me.youngeun.practice1.test1.model.Member;
 import me.youngeun.practice1.test1.model.enums.Authority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
