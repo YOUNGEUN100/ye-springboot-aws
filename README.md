@@ -10,10 +10,6 @@
 - Java Repository, Service, Controller 구현
 - html, thymeleaf 구현
 
-## 보안점
-- 회원가입 하고 db 에 회원정보가 들어가지만
-- 로그인 페이지로 이동을 안함
-
 
 
 
